@@ -28,7 +28,7 @@ chmod a+x ~/bin/repo
 curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo?format=TEXT' | base64 -d > ~/bin/repo 		<br>
 chmod a+x ~/bin/repo
 
-#### .3 repo同步源代码
+#### 2.2.3 repo同步源代码
 创建工具目录			<br>
 mkdir AndroidOS		<br>
 cd AndroidOS		<br>
