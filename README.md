@@ -34,13 +34,13 @@ mkdir AndroidOS		<br>
 cd AndroidOS		<br>
 
 ##### 2.3.1 使用Google源		
-###### .3.1.1 repo 指定下载源的工作目录		
+###### 2.3.1.1 repo 指定下载源的工作目录		
 指定 master分支	<br>
 repo init -u https://android.googlesource.com/platform/manifest		<br>
 
 使用 -b 来指定除master外的其他分支, 代号和细分版本号可查看链接: https://source.android.com/setup/start/build-numbers?hl=zh_cn	<br>	
 repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r17		<br>
-###### .3.1.2 下载代码		
+###### 2.3.1.2 下载代码		
 repo sync		
 
 ##### 2.3.2 使用国内源		
