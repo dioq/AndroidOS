@@ -96,9 +96,9 @@ make -j8			# -jN  N是所分配系统 CPU 核数 的2 倍	<br>
 #### 4.2 再次编译		
 如果已经编译过一次但想更改过一些地方 如更换 Pixel 驱动, 这时没必要重新下载源码从头编译	<br>			
 source build/envsetup.sh		<br>
-lunch				# 备内核和编译版本		
-make update-api 		# 所有api		
-make -j8			# 次重新编译		
+lunch				# 备内核和编译版本		<br>
+make update-api 		# 所有api		<br>
+make -j8			# 次重新编译		<br>
 		
 注:		<br>
 BUILD TYPE则指的是编译类型,通常有三种:		<br>
