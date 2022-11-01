@@ -16,7 +16,7 @@ sudo ln -s /usr/bin/python3.8 /usr/bin/python
 
 ### 2. 获取Android源代码		
 #### 2.1 配置repo 环境		
-mkdir ~/bin	
+mkdir ~/bin  
 echo "PATH=~/bin:\$PATH" >> ~/.bashrc		
 source ~/.bashrc		
 
