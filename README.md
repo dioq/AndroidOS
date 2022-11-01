@@ -77,7 +77,7 @@ cd \~/bin/aosp		<br>
 ### 1. 安装jdk	
 sudo apt-get install openjdk-8-jdk	<br>
 ### 2. 安装所需依赖 (Ubuntu 20.04)		
-sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig libncurses5	<br>
+sudo apt-get install git-core gnupg flex bison build-essential 		zip	 curl	 zlib1g-dev 	gcc-multilib		 g++-multilib  	libc6-dev-i386 	lib32ncurses5-dev 	x11proto-core-dev 	libx11-dev 	lib32z1-dev 	libgl1-mesa-dev 	libxml2-utils 	xsltproc 	unzip 	fontconfig 	libncurses5	<br>
 (官方文档:https://source.android.com/setup/build/initializing?hl=zh-cn)	<br>
 ### 3. 设备驱动的准备		
 谷歌手机设备驱动下载地址: https://developers.google.com/android/drivers	<br>	
