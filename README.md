@@ -16,14 +16,14 @@ sudo ln -s /usr/bin/python3.8 /usr/bin/python
 
 ### 2. 获取Android源代码		
 #### 2.1 配置repo 环境		
-mkdir ~/bin		
+mkdir ~/bin	
 echo "PATH=~/bin:\$PATH" >> ~/.bashrc		
 source ~/.bashrc		
 
 #### 2.2 初始化 repo 下载源		
 ##### 2.2.1 使用Google官方下载源
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo	
+chmod a+x ~/bin/repo	
 ##### 2.2.2 使用国内的下载源
 curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo?format=TEXT' | base64 -d > ~/bin/repo
 chmod a+x ~/bin/repo
@@ -46,7 +46,7 @@ repo sync
 ##### 2.3.2 使用国内源		
 ###### 2.3.2.1  下载国内源码压缩包		
 国内可用镜像源			
-清华镜像源: https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/			
+清华镜像源: https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/		
 中科大镜像源: http://mirrors.ustc.edu.cn/help/aosp.html		
 
 wget https://mirrors.ustc.edu.cn/aosp-monthly/aosp-latest.tar				#  android代码的压缩包下载下来		
