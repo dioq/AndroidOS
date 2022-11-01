@@ -1,8 +1,8 @@
 # AndroidOS 编译
 AOSP 的源码编译成系统并刷机
 
-##一、编译环境配置		
-###1. 操作系统	
+## 一、编译环境配置		
+### 1. 操作系统	
 编译所使用的系统 Ubuntu 20.04 LTS		
 可以在虚拟机里安装也可以安装到物理机上	
 
@@ -14,37 +14,37 @@ sudo unlink /usr/bin/python
 sudo ln -s /usr/bin/python3.8 /usr/bin/python		
 
 
-###2. 获取Android源代码		
-####2.1 配置repo 环境		
+### 2. 获取Android源代码		
+#### 2.1 配置repo 环境		
 mkdir ~/bin		
 echo "PATH=~/bin:\$PATH" >> ~/.bashrc		
 source ~/.bashrc		
 
-####2.2 初始化 repo 下载源		
-#####2.2.1 使用Google官方下载源
+#### 2.2 初始化 repo 下载源		
+##### 2.2.1 使用Google官方下载源
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
-#####2.2.2 使用国内的下载源
+##### 2.2.2 使用国内的下载源
 curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo?format=TEXT' | base64 -d > ~/bin/repo
 chmod a+x ~/bin/repo
 
-####2.3 repo同步源代码
+#### .3 repo同步源代码
 创建工具目录
 mkdir AndroidOS
 cd AndroidOS
 
-#####2.3.1 使用Google源		
-######2.3.1.1 repo 指定下载源的工作目录		
+##### 2.3.1 使用Google源		
+###### .3.1.1 repo 指定下载源的工作目录		
 指定 master分支		
 repo init -u https://android.googlesource.com/platform/manifest		
 
 使用 -b 来指定除master外的其他分支, 代号和细分版本号可查看链接: https://source.android.com/setup/start/build-numbers?hl=zh_cn		
 repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r17		
-######2.3.1.2 下载代码		
+###### .3.1.2 下载代码		
 repo sync		
 
-#####2.3.2 使用国内源		
-######2.3.2.1  下载国内源码压缩包		
+##### 2.3.2 使用国内源		
+###### 2.3.2.1  下载国内源码压缩包		
 国内可用镜像源			
 清华镜像源: https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/			
 中科大镜像源: http://mirrors.ustc.edu.cn/help/aosp.html		
@@ -52,9 +52,9 @@ repo sync
 wget https://mirrors.ustc.edu.cn/aosp-monthly/aosp-latest.tar				#  android代码的压缩包下载下来		
 md5sum aosp-latest.tar										# 下载完进行检验,以保证文件下载完整	
 tar -xvf aosp-latest.tar										#  压所下载压缩包	
-#####2.3.2.2 repo 指定下载源的工作目录	
+##### 2.3.2.2 repo 指定下载源的工作目录	
 repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest -b android-10.0.0_r17	
-######2.3.2.3 下载代码	
+###### 2.3.2.3 下载代码	
 export REPO_URL='https://gerrit-googlesource.proxy.ustclug.org/git-repo'	
 repo sync	
 
@@ -73,10 +73,10 @@ git pull
 cd ~/bin/aosp		
 再次repo init 和 repo sync		
 	
-##二、编译系统	
-###1. 安装jdk	
+## 二、编译系统	
+### 1. 安装jdk	
 sudo apt-get install openjdk-8-jdk	
-###2. 安装所需依赖 (Ubuntu 20.04)		
+### 2. 安装所需依赖 (Ubuntu 20.04)		
 sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig libncurses5
 (官方文档:https://source.android.com/setup/build/initializing?hl=zh-cn)	
 ###3. 设备驱动的准备		
@@ -88,12 +88,12 @@ sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-d
 ./extract-google_devices-marlin.sh  		
 ./extract-qcom-marlin.sh		
 执行到最后输入 I ACCEPT 就完成了		
-###4. 编译		
-####4.1 初次编译		
+### 4. 编译		
+#### 4.1 初次编译		
 source build/envsetup.sh		
 lunch	# 选择设备内核和编译版本		
 make -j8			# -jN  N是所分配系统 CPU 核数 的2 倍		
-####4.2 再次编译		
+#### 4.2 再次编译		
 如果已经编译过一次但想更改过一些地方 如更换 Pixel 驱动, 这时没必要重新下载源码从头编译				
 source build/envsetup.sh		
 lunch				# 备内核和编译版本		
@@ -106,8 +106,8 @@ BUILD TYPE则指的是编译类型,通常有三种:
 -userdebug	在user版本的基础上开放了root权限和debug权限.		
 -eng:		engineer,也就是所谓的开发工程师的版本,拥有最大的权限(root等),此外还附带了许多debug工具		
 	
-##三、刷机	
-###1. 配置刷机环境	
+## 三、刷机	
+### 1. 配置刷机环境	
 安装 Android Studio 	
 在 Android Studio 里安装 Androd Sdk		
 设置 Android Studio -> Setting -> Android Sdk		
@@ -118,7 +118,7 @@ SDK Patforms 里的 Android 系统版本必须包含所要刷入的Android版本
 echo "PATH=~/Library/Android/Sdk/platform-tools:$PATH" >> ~/.bashrc		
 source ~/.bashrc		
 
-###2. 刷入安卓系统官方包 即 Factory Images	
+### 2. 刷入安卓系统官方包 即 Factory Images	
 下载地址: https://developers.google.com/android/images	
 下载对应手机和系统的压缩包 如: https://dl.google.com/dl/android/aosp/marlin-qp1a.191005.007.a3-factory-bef66533.zip	
 下载完解压		
