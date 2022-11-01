@@ -16,16 +16,16 @@ sudo ln -s /usr/bin/python3.8 /usr/bin/python
 
 ### 2. 获取Android源代码		
 #### 2.1 配置repo 环境		
-mkdir \~/bin  
-echo "PATH=~/bin:\$PATH" >> \~/.bashrc	
-source \~/.bashrc		
+mkdir \~/bin  <br>
+echo "PATH=~/bin:\$PATH" >> \~/.bashrc	<br>
+source \~/.bashrc		<br>
 
 #### 2.2 初始化 repo 下载源		
 ##### 2.2.1 使用Google官方下载源
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo	
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo	<br>
 chmod a+x ~/bin/repo	
 ##### 2.2.2 使用国内的下载源
-curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo?format=TEXT' | base64 -d > ~/bin/repo
+curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo?format=TEXT' | base64 -d > ~/bin/repo 		<br>
 chmod a+x ~/bin/repo
 
 #### .3 repo同步源代码
@@ -46,7 +46,7 @@ repo sync
 ##### 2.3.2 使用国内源		
 ###### 2.3.2.1  下载国内源码压缩包		
 国内可用镜像源			
-清华镜像源: https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/		
+清华镜像源: https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/		<br>
 中科大镜像源: http://mirrors.ustc.edu.cn/help/aosp.html		
 
 wget https://mirrors.ustc.edu.cn/aosp-monthly/aosp-latest.tar				#  android代码的压缩包下载下来		
@@ -59,34 +59,34 @@ export REPO_URL='https://gerrit-googlesource.proxy.ustclug.org/git-repo'
 repo sync	
 
 注释：		
-Google官方源码编译文档: https://source.android.com/source/downloading		
+Google官方源码编译文档: https://source.android.com/source/downloading	<br>	
 	
-repo sync的时候有可能会遇到的问题		
+repo sync的时候有可能会遇到的问题		<br>
 info: A new version of repo is available		
-repo: Updating release signing keys to keyset ver 2.3		
-warning: repo is not tracking a remote branch, so it will not receive updates		
-repo reset: error: Entry '.github/workflows/test-ci.yml' not uptodate. Cannot merge.		
-fatal: 不能重置索引文件至版本 'v2.16^0'。		
-解决方案：		
-cd ~/bin/aosp/.repo/repo		
-git pull		
-cd ~/bin/aosp		
-再次repo init 和 repo sync		
+repo: Updating release signing keys to keyset ver 2.3		<br>
+warning: repo is not tracking a remote branch, so it will not receive updates	<br>	
+repo reset: error: Entry '.github/workflows/test-ci.yml' not uptodate. Cannot merge.	<br>	
+fatal: 不能重置索引文件至版本 'v2.16^0'。		<br>
+解决方案：		<br>
+cd \~/bin/aosp/.repo/repo		<br>
+git pull		<br>
+cd \~/bin/aosp		<br>
+再次repo init 和 repo sync		<br>
 	
 ## 二、编译系统	
 ### 1. 安装jdk	
 sudo apt-get install openjdk-8-jdk	
 ### 2. 安装所需依赖 (Ubuntu 20.04)		
-sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig libncurses5
-(官方文档:https://source.android.com/setup/build/initializing?hl=zh-cn)	
-###3. 设备驱动的准备		
-谷歌手机设备驱动下载地址: https://developers.google.com/android/drivers		
-下载的驱动要和要安装的 Pexel 手机要对应		
-下载完后解压驱动压缩包 到 AndroidOS/aosp目录		
-在 aosp 目录里执行上一步解密的两个驱动文件		
+sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig libncurses5	<br>
+(官方文档:https://source.android.com/setup/build/initializing?hl=zh-cn)	<br>
+### 3. 设备驱动的准备		
+谷歌手机设备驱动下载地址: https://developers.google.com/android/drivers	<br>	
+下载的驱动要和要安装的 Pexel 手机要对应		<br>
+下载完后解压驱动压缩包 到 AndroidOS/aosp目录		<br>
+在 aosp 目录里执行上一步解密的两个驱动文件	<br>
 如:		
-./extract-google_devices-marlin.sh  		
-./extract-qcom-marlin.sh		
+./extract-google_devices-marlin.sh  	<br>
+./extract-qcom-marlin.sh	<br>
 执行到最后输入 I ACCEPT 就完成了		
 ### 4. 编译		
 #### 4.1 初次编译		
