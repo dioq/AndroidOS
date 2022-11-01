@@ -1,16 +1,16 @@
 # AndroidOS 编译
-AOSP 的源码编译成系统并刷机
+AOSP 的源码编译成系统并刷机	<br>
 
-## 一、编译环境配置		
-### 1. 操作系统	
-编译所使用的系统 Ubuntu 20.04 LTS		
-可以在虚拟机里安装也可以安装到物理机上	
+## 一、编译环境配置
+### 1. 操作系统
+编译所使用的系统 Ubuntu 20.04 LTS		<br>
+可以在虚拟机里安装也可以安装到物理机上	<br>
 
-安装必备的软件: git, curl		
-sudo apt-get install git curl		
+安装必备的软件: git, curl		<br>
+sudo apt-get install git curl		<br>
 
-配置python 软件链接		
-sudo unlink /usr/bin/python		
+配置python 软件链接		<br>
+sudo unlink /usr/bin/python		<br>
 sudo ln -s /usr/bin/python3.8 /usr/bin/python		
 
 
@@ -29,13 +29,13 @@ curl -sSL  'https://gerrit-googlesource.proxy.ustclug.org/git-repo/+/master/repo
 chmod a+x ~/bin/repo
 
 #### .3 repo同步源代码
-创建工具目录
-mkdir AndroidOS
-cd AndroidOS
+创建工具目录			<br>
+mkdir AndroidOS		<br>
+cd AndroidOS		<br>
 
 ##### 2.3.1 使用Google源		
 ###### .3.1.1 repo 指定下载源的工作目录		
-指定 master分支		
+指定 master分支	<br>
 repo init -u https://android.googlesource.com/platform/manifest		<br>
 
 使用 -b 来指定除master外的其他分支, 代号和细分版本号可查看链接: https://source.android.com/setup/start/build-numbers?hl=zh_cn	<br>	
@@ -47,7 +47,7 @@ repo sync
 ###### 2.3.2.1  下载国内源码压缩包		
 国内可用镜像源			<br>
 清华镜像源: https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/		<br>
-中科大镜像源: http://mirrors.ustc.edu.cn/help/aosp.html		
+中科大镜像源: http://mirrors.ustc.edu.cn/help/aosp.html		<br>
 
 wget https://mirrors.ustc.edu.cn/aosp-monthly/aosp-latest.tar				#  android代码的压缩包下载下来	<br>	
 md5sum aosp-latest.tar									# 下载完进行检验,以保证文件下载完整	<br>
