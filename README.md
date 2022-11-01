@@ -84,7 +84,7 @@ sudo apt-get install git-core gnupg flex bison build-essential 		zip	 curl	 zlib
 下载的驱动要和要安装的 Pexel 手机要对应		<br>
 下载完后解压驱动压缩包 到 AndroidOS/aosp目录		<br>
 在 aosp 目录里执行上一步解密的两个驱动文件	<br>
-如:		
+如:	<br>
 ./extract-google_devices-marlin.sh  	<br>
 ./extract-qcom-marlin.sh	<br>
 执行到最后输入 I ACCEPT 就完成了		<br>
