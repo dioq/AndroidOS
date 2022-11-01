@@ -94,7 +94,9 @@ source build/envsetup.sh		<br>
 lunch	# 选择设备内核和编译版本		<br>
 make -j8			# -jN  N是所分配系统 CPU 核数 的2 倍	<br>	
 #### 4.2 再次编译		
-如果已经编译过一次但想更改过一些地方 如更换 Pixel 驱动, 这时没必要重新下载源码从头编译	<br>			
+如果已经编译过一次但想更改过一些地方 如更换 Pixel 驱动, 这时没必要重新下载源码从头编译	<br>
+make clean				<br>
+make clobber				<br>
 source build/envsetup.sh		<br>
 lunch				# 备内核和编译版本		<br>
 make update-api 		# 所有api		<br>
@@ -102,10 +104,10 @@ make -j8			# 次重新编译		<br>
 		
 注:		<br>
 BUILD TYPE则指的是编译类型,通常有三种:		<br>
--user:		这是编译出的系统镜像是可以用来正式发布到市场的版本,其权限是被限制的(如,没有root权限,不能开启dedug等)	<br>	
--userdebug	在user版本的基础上开放了root权限和debug权限.		<br>
--eng:		engineer,也就是所谓的开发工程师的版本,拥有最大的权限(root等),此外还附带了许多debug工具		<br>
-	
+-user:			这是编译出的系统镜像是可以用来正式发布到市场的版本,其权限是被限制的(如,没有root权限,不能开启dedug等)	<br>	
+-userdebug:		在user版本的基础上开放了root权限和debug权限.		<br>
+-eng:			engineer,也就是所谓的开发工程师的版本,拥有最大的权限(root等),此外还附带了许多debug工具		<br>
+
 ## 三、刷机	
 ### 1. 配置刷机环境	
 安装 Android Studio 	<br>
