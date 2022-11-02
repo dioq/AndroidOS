@@ -99,7 +99,7 @@ make clean				<br>
 make clobber				<br>
 source build/envsetup.sh		<br>
 lunch				# 备内核和编译版本		<br>
-make update-api 		# 所有api		<br>
+make update-api 		# 更新aip后需要执行这条命令		<br>
 make -j8			# 次重新编译		<br>
 		
 注:		<br>
