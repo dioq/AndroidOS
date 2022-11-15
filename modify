@@ -69,7 +69,6 @@ PRODUCT_COPY_FILES += \
 
 
 5. 开机创建自定义目录
-/system/core/rootdir/init.rc 文件中添加以下数据 625
-
-mkdir /data/system/xsettings 0775 system system
-
+/system/core/rootdir/init.rc 文件中添加以下数据
+on init
+    mkdir /data/system/xsettings 0775 system system
