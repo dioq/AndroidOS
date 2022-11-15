@@ -1,4 +1,4 @@
-# AndroidOS 编译
+# Android系统编译
 AOSP 的源码编译成系统并刷机
 
 ## 一、编译环境配置		
