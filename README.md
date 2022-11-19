@@ -1,6 +1,6 @@
 # AndroidOS
 Android系统编译
 
-## 系统编译过程请看 compile.md 
+## 系统编译过程 compile.md 
 
-## 改机教程 
+## 修改源代码注入动态库 Inject.java
