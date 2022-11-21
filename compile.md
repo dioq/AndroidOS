@@ -30,8 +30,8 @@ chmod a+x ~/bin/repo
 
 #### .3 repo同步源代码
 创建工具目录
-mkdir AndroidOS
-cd AndroidOS
+mkdir AndroidOS		<br>
+cd AndroidOS		<br>
 
 ##### 2.3.1 使用Google源		
 ###### .3.1.1 repo 指定下载源的工作目录		
