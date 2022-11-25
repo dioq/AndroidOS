@@ -3,15 +3,15 @@ AOSP 的源码编译成系统并刷机
 
 ## 一、编译环境配置		
 ### 1. 操作系统	
-编译所使用的系统 Ubuntu 20.04 LTS		
-可以在虚拟机里安装也可以安装到物理机上	
+编译所使用的系统 Ubuntu 20.04 LTS		<br>
+可以在虚拟机里安装也可以安装到物理机上		<br>
 
-安装必备的软件: git, curl		
-sudo apt-get install git curl		
+安装必备的软件: git, curl		<br>
+sudo apt-get install git curl		<br>
 
-配置python 软件链接		
-sudo unlink /usr/bin/python		
-sudo ln -s /usr/bin/python3.8 /usr/bin/python		
+配置python 软件链接		<br>
+sudo unlink /usr/bin/python		<br>
+sudo ln -s /usr/bin/python3.8 /usr/bin/python		<br>
 
 
 ### 2. 获取Android源代码		
